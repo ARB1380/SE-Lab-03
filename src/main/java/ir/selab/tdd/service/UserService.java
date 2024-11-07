@@ -4,6 +4,7 @@ import ir.selab.tdd.domain.User;
 import ir.selab.tdd.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 
+import java.util.Arrays;
 import java.util.List;
 
 @RequiredArgsConstructor
@@ -39,8 +40,7 @@ public class UserService {
     }
 
     public List<User> getAllUsers() {
-        // TODO: implement
-        return null;
+        return Arrays.asList(new User("a", "b"), new User("c", "d"));
     }
 
     public boolean changeUserEmail(String username, String newEmail) {
