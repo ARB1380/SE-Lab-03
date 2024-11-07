@@ -61,4 +61,18 @@ public class UserRepositoryTest {
         // Then
         assertEquals(oldUserCount + 1, repository.getUserCount());
     }
+
+    @Test
+    public void removeUser__ShouldDecreaseUserCountByOneWhenUserExists() {
+        int oldUserCount = repository.getUserCount();
+
+        // Given
+        String username = "mohammad";
+
+        // When
+        repository.removeUser(username);
+
+        // Then
+        assertEquals(oldUserCount - 1, repository.getUserCount());
+    }
 }
