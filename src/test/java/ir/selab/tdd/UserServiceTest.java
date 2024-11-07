@@ -58,13 +58,13 @@ public class UserServiceTest {
 
     @Test
     public void removeUserWithCorrectUsername__ShouldSucceed() {
-        boolean removed = userService.removeUser("ahmad");
+        boolean removed = userService.removeUser("ali");
         assertTrue(removed);
     }
 
     @Test
     public void removeUserWithIncorrectUsername__ShouldFail() {
-        boolean removed = userService.removeUser("ahmad");
+        boolean removed = userService.removeUser("ali1");
         assertFalse(removed);
     }
 }
