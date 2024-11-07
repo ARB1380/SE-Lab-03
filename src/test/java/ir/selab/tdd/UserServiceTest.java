@@ -67,4 +67,10 @@ public class UserServiceTest {
         boolean removed = userService.removeUser("ali1");
         assertFalse(removed);
     }
+
+    @Test
+    public void getAllUsers__ShouldGetListOfCorrectLength() {
+        List<User> allUsers = userService.getAllUsers();
+        assertEquals(2, allUsers.size());
+    }
 }
