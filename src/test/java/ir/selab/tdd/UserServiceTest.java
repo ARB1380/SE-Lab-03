@@ -73,4 +73,15 @@ public class UserServiceTest {
         List<User> allUsers = userService.getAllUsers();
         assertEquals(2, allUsers.size());
     }
+
+    @Test
+    public void getAllUsers__ShouldContainAllUsers() {
+        List<User> allUsers = userService.getAllUsers();
+        String firstUsername = allUsers.get(0).getUsername();
+        String secondUsername = allUsers.get(1).getUsername();
+
+        // We should not be able to register user with existing username
+        assertFalse(userService.registerUser(firstUsername, "somePassword"));
+        assertFalse(userService.registerUser(secondUsername, "somePassword"));
+    }
 }
