@@ -40,7 +40,7 @@ public class UserRepository {
 
     public boolean removeUser(String username) {
         usersByUserName.remove(username);
-        return false;
+        return true;
     }
 
     public int getUserCount() {
