@@ -75,4 +75,17 @@ public class UserRepositoryTest {
         // Then
         assertEquals(oldUserCount - 1, repository.getUserCount());
     }
+
+    @Test
+    public void removeUser__ShouldRemoveUserWithUsername() {
+
+        // Given
+        String username = "ali";
+
+        // When
+        repository.removeUser(username);
+
+        // Then
+        assertNull(repository.getUserByUsername(username));
+    }
 }
