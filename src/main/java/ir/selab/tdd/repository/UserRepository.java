@@ -2,6 +2,7 @@ package ir.selab.tdd.repository;
 
 import ir.selab.tdd.domain.User;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -44,5 +45,9 @@ public class UserRepository {
 
     public int getUserCount() {
         return usersByUserName.size();
+    }
+
+    public List<User> getAllUsers() {
+        return new ArrayList<>(usersByUserName.values());
     }
 }
