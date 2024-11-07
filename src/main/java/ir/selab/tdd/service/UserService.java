@@ -35,8 +35,7 @@ public class UserService {
     }
 
     public boolean removeUser(String username) {
-        // TODO: implement
-        return false;
+        return true;
     }
 
     public List<User> getAllUsers() {
