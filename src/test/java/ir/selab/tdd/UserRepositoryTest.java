@@ -88,4 +88,17 @@ public class UserRepositoryTest {
         // Then
         assertNull(repository.getUserByUsername(username));
     }
+
+    @Test
+    public void removeUser__ShouldReturnTrueWhenUserExists() {
+
+        // Given
+        String username = "ali";
+
+        // When
+        boolean removed = repository.removeUser(username);
+
+        // Then
+        assertTrue(removed);
+    }
 }
