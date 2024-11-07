@@ -6,6 +6,7 @@ import ir.selab.tdd.service.UserService;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.Assert.*;
@@ -15,7 +16,7 @@ public class UserServiceTest {
 
     @Before
     public void setUp() {
-        UserRepository userRepository = new UserRepository(List.of());
+        UserRepository userRepository = new UserRepository(Arrays.asList());
         userService = new UserService(userRepository);
         userService.registerUser("admin", "1234");
         userService.registerUser("ali", "qwert");

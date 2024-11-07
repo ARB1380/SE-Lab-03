@@ -41,7 +41,7 @@ public class UserRepositoryTest {
         User user1 = new User("ali", "1234");
         User user2 = new User("ali", "4567");
         assertThrows(IllegalArgumentException.class, () -> {
-            new UserRepository(List.of(user1, user2));
+            new UserRepository(Arrays.asList(user1, user2));
         });
     }
 
