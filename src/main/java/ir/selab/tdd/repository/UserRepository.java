@@ -39,7 +39,7 @@ public class UserRepository {
     }
 
     public boolean removeUser(String username) {
-        usersByUserName.remove("mohammad");
+        usersByUserName.remove(username);
         return false;
     }
 
