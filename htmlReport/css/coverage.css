@@ -49,6 +49,10 @@ a:hover {
   text-decoration: underline;
 }
 
+i {
+  background-color: #eee;
+}
+
 span.separator {
   color: #9BA9BA;
   padding-left: 5px;
@@ -82,7 +86,7 @@ table.coverageStats th {
 }
 
 table.coverageStats th.coverageStat {
-  width: 15%;
+  width: 20%;
 }
 
 table.coverageStats th a {
@@ -110,30 +114,40 @@ div.footer {
   line-height: 140%;
 }
 
-code.sourceCode {
+div.sourceCode {
   width: 100%;
   border: 1px solid #ccc;
   font: normal 12px 'Menlo', 'Bitstream Vera Sans Mono', 'Courier New', 'Courier', monospace;
   white-space: pre;
 }
 
-code.sourceCode b {
+div.sourceCode b {
   font-weight: normal;
 }
 
-code.sourceCode span.number {
+div.sourceCode i {
+  display: block;
+  float: left;
+  width: 3em;
+  padding-right: 3px;
+  border-right: 1px solid #ccc;
+  font-style: normal;
+  text-align: right;
+}
+
+div.sourceCode i.no-highlight span.number {
   color: #151515;
 }
 
-code.sourceCode .fc {
+div.sourceCode .fc, div.sourceCode .fc i {
   background-color: #cfc;
 }
 
-code.sourceCode .pc {
+div.sourceCode .pc, div.sourceCode .pc i {
   background-color: #ffc;
 }
 
-code.sourceCode .nc {
+div.sourceCode .nc, div.sourceCode .nc i {
   background-color: #fcc;
 }
 

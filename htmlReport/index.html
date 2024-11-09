@@ -6,10 +6,9 @@
   <title>Coverage Report > Summary</title>
   <style type="text/css">
     @import "./css/coverage.css";
-    @import "./css/idea.min.css";
+    @import "./css/highlight-idea.css";
   </style>
-  <script type="text/javascript" src="./js/highlight.min.js"></script>
-  <script type="text/javascript" src="./js/highlightjs-line-numbers.min.js"></script>
+  <script type="text/javascript" src="./js/highlight.pack.js"></script>
 </head>
 
 <body>
@@ -39,26 +38,26 @@ Current scope:     all classes
     <td class="name">all classes</td>
 <td class="coverageStat">
   <span class="percent">
-    66.7%
+    100%
   </span>
   <span class="absValue">
-    (2/3)
+    (3/3)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    38.1%
+    100%
   </span>
   <span class="absValue">
-    (8/21)
+    (25/25)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    37.5%
+    100%
   </span>
   <span class="absValue">
-    (12/32)
+    (58/58)
   </span>
 </td>
   </tr>
@@ -97,18 +96,18 @@ Current scope:     all classes
 </td>
 <td class="coverageStat">
   <span class="percent">
-    50%
+    100%
   </span>
   <span class="absValue">
-    (3/6)
+    (6/6)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    50%
+    100%
   </span>
   <span class="absValue">
-    (3/6)
+    (6/6)
   </span>
 </td>
   </tr>
@@ -124,18 +123,18 @@ Current scope:     all classes
 </td>
 <td class="coverageStat">
   <span class="percent">
-    71.4%
+    100%
   </span>
   <span class="absValue">
-    (5/7)
+    (11/11)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    75%
+    100%
   </span>
   <span class="absValue">
-    (9/12)
+    (31/31)
   </span>
 </td>
   </tr>
@@ -143,26 +142,26 @@ Current scope:     all classes
     <td class="name"><a href="ns-3/index.html">ir.selab.tdd.service</a></td>
 <td class="coverageStat">
   <span class="percent">
-    0%
+    100%
   </span>
   <span class="absValue">
-    (0/1)
+    (1/1)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    0%
+    100%
   </span>
   <span class="absValue">
-    (0/8)
+    (8/8)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    0%
+    100%
   </span>
   <span class="absValue">
-    (0/14)
+    (21/21)
   </span>
 </td>
   </tr>
@@ -180,15 +179,18 @@ Current scope:     all classes
     @*/
 
     if (!msie || msie && msie9) {
-      hljs.highlightAll()
-      hljs.initLineNumbersOnLoad();
+        var codeBlock = document.getElementById('sourceCode');
+
+        if (codeBlock) {
+            hljs.highlightBlock(codeBlock);
+        }
     }
 })();
 </script>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2024-11-07 16:19</div>
+    <div style="float:right;">generated on 2024-11-09 18:14</div>
 </div>
 </body>
 </html>
