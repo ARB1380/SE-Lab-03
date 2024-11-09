@@ -123,4 +123,25 @@ public class UserServiceTest {
         //Then
         assertFalse(succeeded);
     }
+
+    @Test
+    public void changeEmail_shouldChangeEmail_WhenNewEmailIsValid(){
+        //Given
+        String username = "ali";
+        String password = "123";
+        String oldEmail = "ali@a.com";
+        String newEmail = "ali2@a.com";
+        userService.registerUser(username, password, oldEmail);
+
+        //When
+        boolean succeeded = userService.changeUserEmail(username, newEmail);
+
+        //Then
+        assertTrue(succeeded);
+        User updatedUser = userService.getAllUsers().stream()
+                .filter(user -> user.getUsername().equals(username))
+                .findFirst()
+                .orElse(null);
+        assertEquals(newEmail, updatedUser.getEmail());
+    }
 }
