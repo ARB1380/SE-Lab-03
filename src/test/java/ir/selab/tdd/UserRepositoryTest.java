@@ -168,5 +168,18 @@ public class UserRepositoryTest {
         });
     }
 
+    @Test
+    public void createRepositoryWithSomeNullEmails_ShouldNotAddToHashmap(){
+        User user1 = new User("alireza", "1234","a@gmail.com");
+        User user2 = new User("ali", "4567","b@gmail.com");
+        User user3 = new User("alire", "1234","c@gmail.com");
+        User user4 = new User("alirez", "4567");
+        UserRepository repo = new UserRepository(Arrays.asList(user1, user2, user3, user4));
+        assertEquals(3, repo.getAllUsersWithEmail().size());
+
+
+
+    }
+
 
 }
