@@ -18,7 +18,8 @@ public class UserRepository {
         }));
 
         // TODO: implement (Some users may not have email!)
-        this.usersByEmail = users.stream().collect(Collectors.toMap(User::getEmail, u -> u, (u1, u2) -> {
+        List<User> usersWithEmails = users.stream().filter(user -> user.getEmail() != null && !user.getEmail().isEmpty()).collect(Collectors.toList());
+        this.usersByEmail = usersWithEmails.stream().collect(Collectors.toMap(User::getEmail, u -> u, (u1, u2) -> {
             throw new IllegalArgumentException("Two users can not have the same email");
         }));
 
@@ -60,5 +61,9 @@ public class UserRepository {
 
     public List<User> getAllUsers() {
         return new ArrayList<>(usersByUserName.values());
+    }
+
+    public List<User> getAllUsersWithEmail(){
+        return new ArrayList<>(usersByEmail.values());
     }
 }
