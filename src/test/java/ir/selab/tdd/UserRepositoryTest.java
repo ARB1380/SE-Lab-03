@@ -159,5 +159,14 @@ public class UserRepositoryTest {
 
     }
 
+    @Test
+    public void createRepositoryWithDuplicateEmails__ShouldThrowException() {
+        User user1 = new User("alireza", "1234","a@gmail.com");
+        User user2 = new User("ali", "4567","a@gmail.com");
+        assertThrows(IllegalArgumentException.class, () -> {
+            new UserRepository(Arrays.asList(user1, user2));
+        });
+    }
+
 
 }
