@@ -104,4 +104,10 @@ public class UserServiceTest {
         boolean login = userService.loginWithEmail("alireza","123");
         assertFalse(login);
     }
+
+    @Test
+    public void loginWithValidUsernameAndValidPasswordAndNotHavingEmail__ShouldSuccess(){
+        boolean login = userService.loginWithEmail("admin", "1234");
+        assertFalse(login);
+    }
 }
