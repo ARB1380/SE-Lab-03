@@ -197,5 +197,27 @@ public class UserRepositoryTest {
 
     }
 
+    @Test
+    public void changeEmail_shouldRaiseError_WhenEmailIsAlreadyUsed(){
+        //Given
+        String username1 = "ali";
+        String password1 = "123";
+        String email1 = "ali@a.com";
+        User user1 = new User(username1, password1, email1);
+        repository.addUser(user1);
+
+        String username2 = "ali";
+        String password2 = "123";
+        String email2 = "ali@a.com";
+        User user2 = new User(username2, password2, email2);
+        repository.addUser(user2);
+
+        //When
+
+        //Then
+        Exception exception = assertThrows(Object.class, () -> {
+            repository.changeEmail(username1, email2);
+        });
+    }
 
 }
