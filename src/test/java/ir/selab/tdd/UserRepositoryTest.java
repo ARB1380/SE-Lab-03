@@ -128,4 +128,17 @@ public class UserRepositoryTest {
         //Then
         assertNotNull(user);
     }
+
+    @Test
+    public void getUserByEmail__WhenEmailNotExists(){
+
+        //Given
+        String email = "a@gmail.com";
+
+        //When
+        User user = repository.getUserByEmail(email);
+
+        //Then
+        assertNull(user);
+    }
 }
