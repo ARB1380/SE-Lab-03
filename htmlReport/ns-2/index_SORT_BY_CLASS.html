@@ -5,10 +5,9 @@
   <title>Coverage Report > ir.selab.tdd.repository</title>
   <style type="text/css">
     @import "../css/coverage.css";
-    @import "../css/idea.min.css";
+    @import "../css/highlight-idea.css";
   </style>
-  <script type="text/javascript" src="../js/highlight.min.js"></script>
-  <script type="text/javascript" src="../js/highlightjs-line-numbers.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
 </head>
 
 <body>
@@ -48,18 +47,18 @@ ir.selab.tdd.repository</div>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    71.4%
+    100%
   </span>
   <span class="absValue">
-    (5/7)
+    (11/11)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    75%
+    100%
   </span>
   <span class="absValue">
-    (9/12)
+    (31/31)
   </span>
 </td>
   </tr>
@@ -98,18 +97,18 @@ ir.selab.tdd.repository</div>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    71.4%
+    100%
   </span>
   <span class="absValue">
-    (5/7)
+    (11/11)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    75%
+    100%
   </span>
   <span class="absValue">
-    (9/12)
+    (31/31)
   </span>
 </td>
   </tr>
@@ -128,15 +127,18 @@ ir.selab.tdd.repository</div>
     @*/
 
     if (!msie || msie && msie9) {
-      hljs.highlightAll()
-      hljs.initLineNumbersOnLoad();
+        var codeBlock = document.getElementById('sourceCode');
+
+        if (codeBlock) {
+            hljs.highlightBlock(codeBlock);
+        }
     }
 })();
 </script>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2024-11-07 16:19</div>
+    <div style="float:right;">generated on 2024-11-09 18:14</div>
 </div>
 </body>
 </html>

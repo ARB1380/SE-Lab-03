@@ -5,10 +5,9 @@
   <title>Coverage Report > ir.selab.tdd.service</title>
   <style type="text/css">
     @import "../css/coverage.css";
-    @import "../css/idea.min.css";
+    @import "../css/highlight-idea.css";
   </style>
-  <script type="text/javascript" src="../js/highlight.min.js"></script>
-  <script type="text/javascript" src="../js/highlightjs-line-numbers.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
 </head>
 
 <body>
@@ -40,26 +39,26 @@ ir.selab.tdd.service</div>
     <td class="name">ir.selab.tdd.service</td>
 <td class="coverageStat">
   <span class="percent">
-    0%
+    100%
   </span>
   <span class="absValue">
-    (0/1)
+    (1/1)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    0%
+    100%
   </span>
   <span class="absValue">
-    (0/8)
+    (8/8)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    0%
+    100%
   </span>
   <span class="absValue">
-    (0/14)
+    (21/21)
   </span>
 </td>
   </tr>
@@ -90,26 +89,26 @@ ir.selab.tdd.service</div>
     <td class="name"><a href="sources/source-1.html">UserService</a></td>
 <td class="coverageStat">
   <span class="percent">
-    0%
+    100%
   </span>
   <span class="absValue">
-    (0/1)
+    (1/1)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    0%
+    100%
   </span>
   <span class="absValue">
-    (0/8)
+    (8/8)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    0%
+    100%
   </span>
   <span class="absValue">
-    (0/14)
+    (21/21)
   </span>
 </td>
   </tr>
@@ -128,15 +127,18 @@ ir.selab.tdd.service</div>
     @*/
 
     if (!msie || msie && msie9) {
-      hljs.highlightAll()
-      hljs.initLineNumbersOnLoad();
+        var codeBlock = document.getElementById('sourceCode');
+
+        if (codeBlock) {
+            hljs.highlightBlock(codeBlock);
+        }
     }
 })();
 </script>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2024-11-07 16:19</div>
+    <div style="float:right;">generated on 2024-11-09 18:14</div>
 </div>
 </body>
 </html>
