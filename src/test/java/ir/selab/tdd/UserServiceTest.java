@@ -20,6 +20,8 @@ public class UserServiceTest {
         userService = new UserService(userRepository);
         userService.registerUser("admin", "1234");
         userService.registerUser("ali", "qwert");
+        userService.registerUser("alireza", "1234", "b@gmail.com");
+        userService.registerUser("alirezaf", "qwert", "c@gmail.com");
     }
 
     @Test
@@ -83,5 +85,11 @@ public class UserServiceTest {
         // We should not be able to register user with existing username
         assertFalse(userService.registerUser(firstUsername, "somePassword"));
         assertFalse(userService.registerUser(secondUsername, "somePassword"));
+    }
+
+    @Test
+    public void loginWithValidUsernameAndValidPasswordAndHavingEmail__ShouldSuccess(){
+        boolean login = userService.loginWithEmail("alireza","1234");
+        assertTrue(login);
     }
 }
