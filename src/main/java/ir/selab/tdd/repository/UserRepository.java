@@ -67,6 +67,14 @@ public class UserRepository {
     }
 
     public boolean changeEmail(String username, String email) {
-        return false;
+        if (!usersByUserName.containsKey(username)) {
+            return false;
+        }
+
+        if (usersByEmail.containsKey(email)) {
+            return false;
+        }
+
+        return true;
     }
 }

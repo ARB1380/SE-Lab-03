@@ -224,4 +224,24 @@ public class UserRepositoryTest {
         //Then
         assertFalse(succeeded);
     }
+
+    @Test
+    public void changeEmail_shouldChangeEmail_WhenNewEmailIsValid(){
+        //Given
+        String username = "ali";
+        String password = "123";
+        String oldEmail = "ali@a.com";
+        String newEmail = "ali2@a.com";
+        User user = new User(username, password, oldEmail);
+        repository.addUser(user);
+
+        //When
+        boolean succeeded = repository.changeEmail(username, newEmail);
+
+        //Then
+        assertEquals(true, succeeded);
+        assertEquals(newEmail, repository.getUserByUsername(username).getEmail());
+        assertEquals(null, repository.getUserByEmail(oldEmail).getEmail());
+        assertEquals(user, repository.getUserByEmail(newEmail).getEmail());
+    }
 }
