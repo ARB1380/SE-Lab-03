@@ -200,23 +200,28 @@ public class UserRepositoryTest {
     @Test
     public void changeEmail_shouldNotChangeEmail_WhenEmailIsAlreadyUsed(){
         //Given
-        String username1 = "ali";
-        String password1 = "123";
-        String email1 = "ali@a.com";
-        User user1 = new User(username1, password1, email1);
-        repository.addUser(user1);
-
-        String username2 = "ali";
-        String password2 = "123";
-        String email2 = "amir@a.com";
-        User user2 = new User(username2, password2, email2);
-        repository.addUser(user2);
+        String user = "mohammad";
+        String userEmail = "d@gmail.com";
+        String anotherExistingEmail = "b@gmail.com";
 
         //When
-        boolean succeeded = repository.changeEmail(username1, email2);
+        boolean succeeded = repository.changeEmail(user, anotherExistingEmail);
 
         //Then
         assertFalse(succeeded);
-        assertEquals(email1, repository.getUserByUsername(username1).getEmail());
+        assertEquals(userEmail, repository.getUserByUsername(user).getEmail());
+    }
+
+    @Test
+    public void changeEmail_shouldReturnFalse_WhenUserNotExists(){
+        //Given
+        String user = "abolfazl";
+        String email = "ab@gmail.com";
+
+        //When
+        boolean succeeded = repository.changeEmail(user, email);
+
+        //Then
+        assertFalse(succeeded);
     }
 }
