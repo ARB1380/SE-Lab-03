@@ -4,7 +4,6 @@ import ir.selab.tdd.domain.User;
 import ir.selab.tdd.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 
-import java.util.Arrays;
 import java.util.List;
 
 @RequiredArgsConstructor
@@ -20,7 +19,6 @@ public class UserService {
     }
 
     public boolean loginWithEmail(String username, String password) {
-        // TODO: implement login with email. return true if username and password are valid.
         User userByUsername = repository.getUserByUsername(username);
         if (userByUsername == null) {
             return false;
@@ -29,14 +27,12 @@ public class UserService {
         if (!userByUsername.getPassword().equals(password)){
             return false;
         }
+
         if(userByUsername.getEmail() == null || userByUsername.getEmail().isEmpty()){
             return false;
         }
 
-
         return true;
-
-//        return false;
     }
 
     public boolean registerUser(String username, String password) {

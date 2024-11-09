@@ -73,7 +73,7 @@ public class UserServiceTest {
     @Test
     public void getAllUsers__ShouldGetListOfCorrectLength() {
         List<User> allUsers = userService.getAllUsers();
-        assertEquals(2, allUsers.size());
+        assertEquals(4, allUsers.size());
     }
 
     @Test
@@ -94,19 +94,19 @@ public class UserServiceTest {
     }
 
     @Test
-    public void loginWithInValidUsernameAndValidPasswordAndHavingEmail__ShouldSuccess(){
+    public void loginWithInValidUsernameAndValidPasswordAndHavingEmail__ShouldFail(){
         boolean login = userService.loginWithEmail("alirezagfd","1234");
         assertFalse(login);
     }
 
     @Test
-    public void loginWithValidUsernameAndInValidPasswordAndHavingEmail__ShouldSuccess(){
+    public void loginWithValidUsernameAndInValidPasswordAndHavingEmail__ShouldFail(){
         boolean login = userService.loginWithEmail("alireza","123");
         assertFalse(login);
     }
 
     @Test
-    public void loginWithValidUsernameAndValidPasswordAndNotHavingEmail__ShouldSuccess(){
+    public void loginWithValidUsernameAndValidPasswordAndNotHavingEmail__ShouldFail(){
         boolean login = userService.loginWithEmail("admin", "1234");
         assertFalse(login);
     }

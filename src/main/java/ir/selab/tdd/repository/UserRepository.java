@@ -3,7 +3,6 @@ package ir.selab.tdd.repository;
 import ir.selab.tdd.domain.User;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -17,7 +16,7 @@ public class UserRepository {
             throw new IllegalArgumentException("Two users can not have the same username");
         }));
 
-        // TODO: implement (Some users may not have email!)
+
         List<User> usersWithEmails = users.stream().filter(user -> user.getEmail() != null && !user.getEmail().isEmpty()).collect(Collectors.toList());
         this.usersByEmail = usersWithEmails.stream().collect(Collectors.toMap(User::getEmail, u -> u, (u1, u2) -> {
             throw new IllegalArgumentException("Two users can not have the same email");
@@ -40,7 +39,7 @@ public class UserRepository {
         if (usersByUserName.containsKey(user.getUsername())) {
             return false;
         }
-        // TODO: implement check email duplication
+
         if(user.getEmail() != null){
             if(usersByEmail.containsKey(user.getEmail())){
                 return false;
