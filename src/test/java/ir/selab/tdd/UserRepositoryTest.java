@@ -181,5 +181,21 @@ public class UserRepositoryTest {
 
     }
 
+    @Test
+    public void addUserWithEmptyEmail_shouldNotBeAddedInEmailList(){
+        //Given
+        String username = "aliryete";
+        String password = "123";
+        String email = "";
+        User user = new User(username, password, email);
+
+        //When
+        repository.addUser(user);
+
+        //Then
+        assertEquals(3,repository.getAllUsersWithEmail().size());
+
+    }
+
 
 }
