@@ -29,6 +29,10 @@ public class UserService {
         if (!userByUsername.getPassword().equals(password)){
             return false;
         }
+        if(userByUsername.getEmail() == null || userByUsername.getEmail().isEmpty()){
+            return false;
+        }
+
 
         return true;
 
