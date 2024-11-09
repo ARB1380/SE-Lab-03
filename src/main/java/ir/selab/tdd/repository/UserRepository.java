@@ -40,7 +40,7 @@ public class UserRepository {
             return false;
         }
 
-        if(user.getEmail() != null){
+        if(user.getEmail() != null && !user.getEmail().isEmpty()){
             if(usersByEmail.containsKey(user.getEmail())){
                 return false;
             }
