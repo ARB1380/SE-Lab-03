@@ -141,4 +141,23 @@ public class UserRepositoryTest {
         //Then
         assertNull(user);
     }
+
+    @Test
+    public void AddUser__FailBecauseOfDuplicateEmail(){
+
+        //Given
+        String username = "aliryete";
+        String password = "123";
+        String email = "b@gmail.com";
+        User user = new User(username, password, email);
+
+        //When
+        boolean result = repository.addUser(user);
+
+        //Then
+        assertFalse(result);
+
+    }
+
+
 }
