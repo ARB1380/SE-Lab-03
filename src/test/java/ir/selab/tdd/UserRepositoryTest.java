@@ -2,6 +2,7 @@ package ir.selab.tdd;
 
 import ir.selab.tdd.domain.User;
 import ir.selab.tdd.repository.UserRepository;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -16,9 +17,9 @@ public class UserRepositoryTest {
     @Before
     public void setUp() {
         List<User> userList = Arrays.asList(
-                new User("admin", "1234"),
-                new User("ali", "qwert"),
-                new User("mohammad", "123asd"));
+                new User("admin", "1234","b@gmail.com"),
+                new User("ali", "qwert", "c@gmail.com"),
+                new User("mohammad", "123asd", "d@gmail.com"));
         repository = new UserRepository(userList);
     }
 
@@ -113,5 +114,18 @@ public class UserRepositoryTest {
 
         // Then
         assertFalse(removed);
+    }
+
+    @Test
+    public void getUserByEmail__WhenEmailExists(){
+
+        //Given
+        String email = "b@gmail.com";
+
+        //When
+        User user = repository.getUserByEmail(email);
+
+        //Then
+        assertNotNull(user);
     }
 }
