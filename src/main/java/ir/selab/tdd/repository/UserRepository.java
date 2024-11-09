@@ -75,6 +75,11 @@ public class UserRepository {
             return false;
         }
 
+        User user = getUserByUsername(username);
+        usersByEmail.remove(user.getEmail());
+        user.setEmail(email);
+        usersByEmail.put(email, user);
+
         return true;
     }
 }

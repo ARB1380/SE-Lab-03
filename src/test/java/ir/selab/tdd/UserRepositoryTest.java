@@ -239,9 +239,9 @@ public class UserRepositoryTest {
         boolean succeeded = repository.changeEmail(username, newEmail);
 
         //Then
-        assertEquals(true, succeeded);
+        assertTrue(succeeded);
         assertEquals(newEmail, repository.getUserByUsername(username).getEmail());
-        assertEquals(null, repository.getUserByEmail(oldEmail).getEmail());
-        assertEquals(user, repository.getUserByEmail(newEmail).getEmail());
+        assertNull(repository.getUserByEmail(oldEmail));
+        assertEquals(user.getUsername(), repository.getUserByEmail(newEmail).getUsername());
     }
 }

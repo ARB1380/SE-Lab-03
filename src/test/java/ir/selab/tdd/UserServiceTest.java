@@ -110,4 +110,17 @@ public class UserServiceTest {
         boolean login = userService.loginWithEmail("admin", "1234");
         assertFalse(login);
     }
+
+    @Test
+    public void changeEmail_shouldReturnFalse_WhenUserNotExists(){
+        //Given
+        String user = "abolfazl";
+        String email = "ab@gmail.com";
+
+        //When
+        boolean succeeded = userService.changeUserEmail(user, email);
+
+        //Then
+        assertFalse(succeeded);
+    }
 }
