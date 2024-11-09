@@ -36,7 +36,7 @@ public class UserRepository {
         if(usersByEmail.containsKey(email)){
             return usersByEmail.get(email);
         }
-        return new User("a","b","c");
+        return null;
     }
 
     public boolean addUser(User user) {
