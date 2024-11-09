@@ -19,6 +19,13 @@ public class UserRepository {
 
         // TODO: implement (Some users may not have email!)
         this.usersByEmail = new HashMap<>();
+        for(User user : users){
+            String email = user.getEmail();
+            if (email != null){
+                usersByEmail.put(email, user);
+            }
+        }
+
     }
 
     public User getUserByUsername(String username) {
@@ -26,8 +33,10 @@ public class UserRepository {
     }
 
     public User getUserByEmail(String email) {
-        // TODO: implement
-        return null;
+        if(usersByEmail.containsKey(email)){
+            return usersByEmail.get(email);
+        }
+        return new User("a","b","c");
     }
 
     public boolean addUser(User user) {
