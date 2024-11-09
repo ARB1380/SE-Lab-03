@@ -143,5 +143,6 @@ public class UserServiceTest {
                 .findFirst()
                 .orElse(null);
         assertEquals(newEmail, updatedUser.getEmail());
+        userService.loginWithEmail(username, password);
     }
 }
