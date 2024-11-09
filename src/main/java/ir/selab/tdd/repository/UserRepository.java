@@ -65,4 +65,8 @@ public class UserRepository {
     public List<User> getAllUsersWithEmail(){
         return new ArrayList<>(usersByEmail.values());
     }
+
+    public boolean changeEmail(String username, String email) {
+        return false;
+    }
 }

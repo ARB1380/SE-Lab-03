@@ -198,7 +198,7 @@ public class UserRepositoryTest {
     }
 
     @Test
-    public void changeEmail_shouldRaiseError_WhenEmailIsAlreadyUsed(){
+    public void changeEmail_shouldNotChangeEmail_WhenEmailIsAlreadyUsed(){
         //Given
         String username1 = "ali";
         String password1 = "123";
@@ -208,16 +208,15 @@ public class UserRepositoryTest {
 
         String username2 = "ali";
         String password2 = "123";
-        String email2 = "ali@a.com";
+        String email2 = "amir@a.com";
         User user2 = new User(username2, password2, email2);
         repository.addUser(user2);
 
         //When
+        boolean succeeded = repository.changeEmail(username1, email2);
 
         //Then
-        Exception exception = assertThrows(Object.class, () -> {
-            repository.changeEmail(username1, email2);
-        });
+        assertFalse(succeeded);
+        assertEquals(email1, repository.getUserByUsername(username1).getEmail());
     }
-
 }
